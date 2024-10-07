@@ -31,9 +31,10 @@ public class EjercicioParaNota
 		System.out.println("4. Actualizar empleado");
 		System.out.println("5.Listar todos los empleados");
 		System.out.println("6.Listar un empleado en particular");
-		System.out.println("7.Salir");
+		System.out.println("7.Listar al reves los empleados");
+		System.out.println("8.Salir");
 		opcion = teclado.nextInt();
-		
+		teclado.nextLine();
 	switch(opcion)
 	  {
 	case 1:	
@@ -67,13 +68,17 @@ public class EjercicioParaNota
 	break;
 	
 	case 7:
+    listarTodosEmpleadosAlreves(fichero,archivo);
+	break;
+	
+	case 8:
 	break;
 	
 	default:
 		System.out.println("Argumento no valido");
 	   }
 	
-	}while(opcion != 0);
+	}while(opcion != 8);
      }
 	
 	public void leerEmpleado(File archivo, RandomAccessFile fichero) throws IOException {
@@ -107,7 +112,7 @@ public class EjercicioParaNota
 		System.out.print("Dame el número de registro que quieres borrar: ");
         int posicion = teclado.nextInt();
         int posicionReal = (posicion - 1) * 36;
-
+      
         if (posicionReal >= fichero.length()) {
             System.out.println("El registro no existe.");
             return;
@@ -122,9 +127,11 @@ public class EjercicioParaNota
 	
 	
 	public void añadirEmpleado(File archivo, RandomAccessFile fichero) throws IOException {
-		
-		System.out.println("Dame el id del empleado:");
-		int id = teclado.nextInt();
+		long posicion = archivo.length() - 36;
+		fichero.seek(posicion);
+		int id = fichero.readInt();
+		fichero.seek(archivo.length());
+		fichero.writeInt(Math.abs(id)+1);
 		
 		System.out.println("Dame el apellido del empleado:");
 		String apellido = teclado.nextLine();
@@ -136,8 +143,6 @@ public class EjercicioParaNota
 		System.out.println("Dame el salario del nuevo empleado:");
 		double salario = teclado.nextDouble();
 		
-		fichero.seek(archivo.length());
-		fichero.writeInt(id);
 		buffer =new StringBuffer(apellido);
 		buffer.setLength(10);
 		fichero.writeChars(buffer.toString());
@@ -147,22 +152,20 @@ public class EjercicioParaNota
 	
 	
 	public void actualizarEmpleado(File archivo, RandomAccessFile fichero) throws IOException {
-		System.out.print("Dame el número de registro que quieres borrar: ");
+		System.out.print("Dame el número de registro que quieres actualizar: ");
         int posicion = teclado.nextInt();
+        teclado.nextLine();
         int posicionReal = (posicion - 1) * 36;
-
+   
         if (posicionReal >= fichero.length()) {
             System.out.println("El registro no existe.");
             return;
         }
-        
-       
-		System.out.println("Dame el id del empleado a acutalizar:");
-		int id = teclado.nextInt();
-		
+        	
 		System.out.println("Dame el apellido del empleado a actualizar:");
 		String apellido = teclado.nextLine();
 		StringBuffer buffer = null;
+		
 		
 		System.out.println("Dame el departamento del empleado a actualizar:");
 		int departamento = teclado.nextInt();
@@ -171,7 +174,7 @@ public class EjercicioParaNota
 		double salario = teclado.nextDouble();
 		
 		fichero.seek(posicionReal);
-		fichero.writeInt(id);
+		fichero.skipBytes(4);
 		buffer =new StringBuffer(apellido);
 		buffer.setLength(10);
 		fichero.writeChars(buffer.toString());
@@ -181,29 +184,57 @@ public class EjercicioParaNota
 	
 	
 	
-	public void listarTodosEmpleados(RandomAccessFile fichero) throws IOException {
+	public void listarTodosEmpleados(RandomAccessFile fichero) throws IOException 	
+		{
         fichero.seek(0); 
-        while (fichero.getFilePointer() < fichero.length()) {
+        while (fichero.getFilePointer() < fichero.length()) 
+        	{
             int id = fichero.readInt();
             String apellido = readString(fichero, 10);
             int dep = fichero.readInt();
             double salario = fichero.readDouble();
-            if(id > 0) {
-            System.out.println("Empleado ID: " + id + ", Apellido: " + apellido.trim() + ", Departamento: " + dep + ", Salario:" + salario);
-        }
-     }
-	}
+            if(id > 0) 
+            	{
+            	System.out.println("Empleado ID: " + id + ", Apellido: " + apellido.trim() + ", Departamento: " + dep + ", Salario:" + salario);
+            	}
+        	}
+		}
 	
-	public void listarEmpleado(RandomAccessFile fichero){
+	public void listarTodosEmpleadosAlreves(RandomAccessFile fichero, File archivo) throws IOException 
+		{
+		long puntero = (archivo.length() - 36);
+		
+		
+        while (puntero >= 0) 
+        {
+        	fichero.seek(puntero);
+            int id = fichero.readInt();
+            String apellido = readString(fichero, 10);
+            int dep = fichero.readInt();
+            double salario = fichero.readDouble();
+            if(id > 0)
+            {
+            	System.out.println("Empleado ID: " + id + ", Apellido: " + apellido.trim() + ", Departamento: " + dep + ", Salario:" + salario);            
+            }
+        	puntero = fichero.getFilePointer()- (36*2);
+
+        }
+		}
+	
+	
+	public void listarEmpleado(RandomAccessFile fichero)
+		{
 		System.out.print("Dame el número de registro que quieres leer: ");
         int posicion = teclado.nextInt();
         int posicionReal = (posicion - 1) * 36;
 
-        try {
-		if (posicionReal >= fichero.length()) {
+        try 
+        	{
+		if (posicionReal >= fichero.length()) 
+			{
 	    System.out.println("El registro no existe.");
 			    return;
-		}
+			}
        
 		    fichero.seek(posicionReal);
             int id = fichero.readInt();
@@ -211,8 +242,10 @@ public class EjercicioParaNota
             int dep = fichero.readInt();
             double salario = fichero.readDouble();
 
+            if(id > 0) 
+            	{
             System.out.println("Empleado ID: " + id + ", Apellido: " + apellido.trim() + ", Departamento: " + dep + ", Salario: " + salario);
-		
+            	}
 			
         }catch(EOFException e) {
         	System.out.println("Lectura finalizada");
