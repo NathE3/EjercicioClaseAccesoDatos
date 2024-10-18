@@ -1,4 +1,4 @@
-package TradadoArchivos;
+package TratadoArchivos;
 
 import java.io.FileOutputStream;
 import java.io.IOException;

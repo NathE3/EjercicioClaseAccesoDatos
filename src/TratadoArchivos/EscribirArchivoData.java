@@ -1,4 +1,4 @@
-package TradadoArchivos;
+package TratadoArchivos;
 import java.io.*;
 public class EscribirArchivoData
 {	
