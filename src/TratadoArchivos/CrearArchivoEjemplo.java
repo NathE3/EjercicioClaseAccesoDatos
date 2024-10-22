@@ -12,7 +12,6 @@ public class CrearArchivoEjemplo
 
 		int[] id = { 11122331, 22299912, 33377723, 11177744};
 		String[] apellido = { "Rio", "Torcal", "Princich", "San Martín"};
-		int[] dep = { 1, 2, 3, 4};
 		double[] salario = { 1500.1, 2000.0, 3000.5, 5000.0};
 
 
@@ -27,7 +26,6 @@ public class CrearArchivoEjemplo
 			buffer = new StringBuffer(apellido[i]);
 			buffer.setLength(10);
 			fichero.writeChars(buffer.toString());
-			fichero.writeInt(dep[i]);
 			fichero.writeDouble(salario[i]);
 
 		}
