@@ -9,8 +9,6 @@ import com.thoughtworks.xstream.security.AnyTypePermission;
 
 public class LeerEmpleadoXML {
 
-
-    public class LeerXML {
         public static void main(String[] args) {
             try {
 
@@ -31,7 +29,7 @@ public class LeerEmpleadoXML {
                 xstream.addImplicitCollection(ListaEmpleado.class, "lista");
 
 
-                try (FileInputStream fis = new FileInputStream("D://Personas.xml")) {
+                try (FileInputStream fis = new FileInputStream("D://Empleado.xml")) {
 
                    ListaEmpleado listarEmpleados = (ListaEmpleado) xstream.fromXML(fis);
 
@@ -45,7 +43,7 @@ public class LeerEmpleadoXML {
                     while (iterador.hasNext()) {
                         Empleado e = iterador.next();
                         System.out.printf(e.toString());
-                        System.out.println("Fin de listado");
+                        System.out.println(" Fin de listado");
                     }
                 }
             } catch (FileNotFoundException e) {
@@ -55,4 +53,4 @@ public class LeerEmpleadoXML {
             }
         }
     }
-}
+

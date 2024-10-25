@@ -1,9 +1,6 @@
 package XMLEmpleado;
 
-import Sax.ListarPersona;
-import Sax.Persona;
 import com.thoughtworks.xstream.XStream;
-
 import java.io.*;
 
 public class EscribirEmpleadoXML
@@ -11,7 +8,7 @@ public class EscribirEmpleadoXML
     public static void main(String[] args) throws IOException,
             ClassNotFoundException, IOException
     {
-        File fichero = new File("D://Aleatorio.dat");
+        File fichero = new File("D://Empleado.dat");
         FileInputStream filein = new FileInputStream(fichero);
         ObjectInputStream datalS = new ObjectInputStream(filein);
         System.out.println("Comienza el proceso...");
