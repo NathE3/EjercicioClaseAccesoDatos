@@ -28,6 +28,9 @@ public class EscribirPersonas {
              //cambiar de nombre a las etiquetas XML
             xstream.alias("ListaPersonasMunicipio", ListarPersona.class);
             xstream.alias("DatosPersona", Persona.class);
+
+            xstream.aliasField("nombreAlumno", Persona.class,"nombre");
+            xstream.aliasField("edadAlumno", Persona.class,"edad");
             //quitar etiqueta lista (atributo de la clase ListaPersonas)
             xstream.addImplicitCollection(ListarPersona.class, "lista");
             //Insertar los objetos en el XML

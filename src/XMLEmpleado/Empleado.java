@@ -1,22 +1,24 @@
-package Sax;
+package XMLEmpleado;
+
 import java.io.Serializable;
 import java.util.Objects;
 
-public class Persona implements Serializable
-    {
-    //Clase persona
+public class Empleado implements Serializable {
+        //Clase persona
 
         private String nombre;
         private int edad;
+        private double salario;
 
         // Constructores:
-        public Persona(String nombre,int edad)
+        public Empleado(String nombre,int edad, double salario)
         {
             this.nombre=nombre;
             this.edad=edad;
+            this.salario =salario;
         }
 
-        public Persona()
+        public Empleado()
         {
             this.nombre=null;
         }
@@ -30,18 +32,16 @@ public class Persona implements Serializable
 
         @Override
         public String toString() {
-            return "Persona{" +
-                    "nombre='" + nombre + '\'' +
-                    ", edad=" + edad +
-                    '}';
+            return "Empleado: " + "nombre: " + nombre + '\'' +
+                    ", edad: " + edad + ", salario" + salario;
         }
 
         @Override
         public boolean equals(Object o) {
             if (this == o) return true;
             if (o == null || getClass() != o.getClass()) return false;
-            Persona persona = (Persona) o;
-            return edad == persona.edad && Objects.equals(nombre, persona.nombre);
+            Empleado empleado = (Empleado) o;
+            return edad == empleado.edad && Objects.equals(nombre, empleado.nombre);
         }
 
         @Override
