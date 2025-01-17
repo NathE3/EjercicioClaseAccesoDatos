@@ -1,0 +1,35 @@
+<component name="libraryTable">
+  <library name="mysql-connector-j-9.1.0">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../mysql-connector-j-9.1.0/mysql-connector-j-9.1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../lib/db4o-8.0.276.16149-all-java5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../XStream/xstream-1.4.13.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../XStream/kxml2-2.3.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../sqlite-jdbc-3.8.11.2.jar!/" />
+      <root url="jar://D:/H2/bin/h2-2.3.232.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../UCanAccess-5.0.1.bin/UCanAccess-5.0.1.bin/ucanaccess-5.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../UCanAccess-5.0.1.bin/UCanAccess-5.0.1.bin/lib/commons-lang3-3.8.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../UCanAccess-5.0.1.bin/UCanAccess-5.0.1.bin/lib/commons-logging-1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../UCanAccess-5.0.1.bin/UCanAccess-5.0.1.bin/lib/hsqldb-2.5.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../UCanAccess-5.0.1.bin/UCanAccess-5.0.1.bin/lib/jackcess-3.0.1.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/db-derby-10.12.1.1-bin/db-derby-10.12.1.1-bin/lib/derby.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/db-derby-10.12.1.1-bin/db-derby-10.12.1.1-bin/lib/derbyclient.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/db-derby-10.12.1.1-bin/db-derby-10.12.1.1-bin/lib/derbynet.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/db-derby-10.12.1.1-bin/db-derby-10.12.1.1-bin/lib/derbyoptionaltools.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/db-derby-10.12.1.1-bin/db-derby-10.12.1.1-bin/lib/derbyrun.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/db-derby-10.12.1.1-bin/db-derby-10.12.1.1-bin/lib/derbytools.jar!/" />
+      <root url="file://$USER_HOME$/Desktop/cosas/hsqldb-2.7.4/hsqldb-2.7.4/hsqldb/lib" />
+      <root url="jar://$USER_HOME$/Desktop/cosas/hsqldb-2.7.4/hsqldb-2.7.4/hsqldb/lib/ConectandoMonos.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/cosas/hsqldb-2.7.4/hsqldb-2.7.4/hsqldb/lib/hsqldb-jdk8.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/cosas/hsqldb-2.7.4/hsqldb-2.7.4/hsqldb/lib/hsqldb.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/cosas/hsqldb-2.7.4/hsqldb-2.7.4/hsqldb/lib/javax.servlet-api-3.1.0.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/cosas/hsqldb-2.7.4/hsqldb-2.7.4/hsqldb/lib/sqltool-jdk8.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/cosas/hsqldb-2.7.4/hsqldb-2.7.4/hsqldb/lib/sqltool.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../sqlite-jdbc-3.8.11.2.jar!/" />
+    </SOURCES>
+    <jarDirectory url="file://$USER_HOME$/Desktop/cosas/hsqldb-2.7.4/hsqldb-2.7.4/hsqldb/lib" recursive="false" />
+  </library>
+</component>

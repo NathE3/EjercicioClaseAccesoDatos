@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<listadealumnos>
+   <alumno>
+       <DNI>16111222A</DNI>
+       <nombre>Juan</nombre>
+       <apellido>Gonzalez Fernandez</apellido>
+       <direccion>Calle Circunde n1, piso 1A</direccion>
+       <cp>26001</cp>
+       <provincia>La Rioja</provincia>
+       <telefono>607112233</telefono>
+       <e-mail>juangon@mail.com</e-mail>
+       <edad>19</edad>
+   </alumno>		
+   <alumno>
+       <DNI>16111222A</DNI>
+       <nombre>Maria</nombre>
+       <apellido>Herreros Panizo</apellido>
+       <direccion>Calle Plaza Mayor n1, piso 1B</direccion>
+       <cp>26002</cp>
+       <provincia>Madrid</provincia>
+       <telefono>609332211</telefono>
+       <e-mail>mariaher@mail.com</e-mail>
+       <edad>20</edad>
+   </alumno>		
+</listadealumnos>

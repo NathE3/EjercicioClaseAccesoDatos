@@ -1,6 +1,7 @@
-package TradadoArchivos.CrearBaseDatos;
+package TradadoArchivos.BasesDatos;
 
-public class Empleado {
+public class Empleado
+{
 
     String nombre;
     String apellido;
